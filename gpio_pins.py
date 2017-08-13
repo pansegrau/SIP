@@ -92,10 +92,10 @@ def setup_pins():
         if gv.platform == 'pi':  # If this will run on Raspberry Pi:
             if not gv.use_pigpio:
                 GPIO.setmode(GPIO.BOARD)  # IO channels are identified by header connector pin numbers. Pin numbers are always the same regardless of Raspberry Pi board revision.
-            pin_sr_dat = gv.pin_map[13]
-            pin_sr_clk = gv.pin_map[7]
-            pin_sr_noe = gv.pin_map[11]
-            pin_sr_lat = gv.pin_map[15]
+            pin_sr_dat = gv.pin_map[19]   # 13  SER
+            pin_sr_clk = gv.pin_map[23]   # 7   SR Clk
+            pin_sr_noe = gv.pin_map[11]   # 11  OE  no change as it is tied to ground on device
+            pin_sr_lat = gv.pin_map[24]   # 15  R Clk
         elif gv.platform == 'bo':  # If this will run on Beagle Bone Black:
             pin_sr_dat = gv.pin_map[11]
             pin_sr_clk = gv.pin_map[13]
